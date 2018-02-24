@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88454B4C-2CC7-4DEF-A079-5ED6B0AE77AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>sistemadeventas2.My.MyApplication</StartupObject>
+    <RootNamespace>sistemadeventas2</RootNamespace>
+    <AssemblyName>sistemadeventas2</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Gabriel\Documents\sistemadeventa\base de datos\instalador\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>23</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>sistemadeventas2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>sistemadeventas2.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8883DB9B3695E5DE870D7623548E8EF63BF6E98F</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>sistemadeventas2_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="datos\conexion.vb" />
+    <Compile Include="datos\fbackup.vb" />
+    <Compile Include="datos\fcategoria.vb" />
+    <Compile Include="datos\fcliente.vb" />
+    <Compile Include="datos\fdetalle.vb" />
+    <Compile Include="datos\fdetalle_venta.vb" />
+    <Compile Include="datos\fproducto.vb" />
+    <Compile Include="datos\fusuario.vb" />
+    <Compile Include="datos\fventa.vb" />
+    <Compile Include="dbventas1DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbventas1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbventasDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbventasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dbventasDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbventasDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="logica\vcategoria.vb" />
+    <Compile Include="logica\vcliente.vb" />
+    <Compile Include="logica\vdetalle.vb" />
+    <Compile Include="logica\vdetalle_venta.vb" />
+    <Compile Include="logica\vproducto.vb" />
+    <Compile Include="logica\vusuario.vb" />
+    <Compile Include="logica\vventa.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="presentacion\detalle.Designer.vb">
+      <DependentUpon>detalle.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\detalle.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\fmbackupbase.Designer.vb">
+      <DependentUpon>fmbackupbase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\fmbackupbase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\fmcategoria.Designer.vb">
+      <DependentUpon>fmcategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\fmcategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\fmcliente.Designer.vb">
+      <DependentUpon>fmcliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\fmcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\fminicio.Designer.vb">
+      <DependentUpon>fminicio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\fminicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\fmlogin.Designer.vb">
+      <DependentUpon>fmlogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\fmlogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\fmproducto.Designer.vb">
+      <DependentUpon>fmproducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\fmproducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\usuario.Designer.vb">
+      <DependentUpon>usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\venta.Designer.vb">
+      <DependentUpon>venta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\venta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporte\fmreportecomprobante.Designer.vb">
+      <DependentUpon>fmreportecomprobante.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reporte\fmreportecomprobante.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporte\fmreporteproducto.Designer.vb">
+      <DependentUpon>fmreporteproducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reporte\fmreporteproducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptcomprobante.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptcomprobante.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rptproducto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptproducto.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\detalle.resx">
+      <DependentUpon>detalle.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\fmbackupbase.resx">
+      <DependentUpon>fmbackupbase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\fmcategoria.resx">
+      <DependentUpon>fmcategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\fmcliente.resx">
+      <DependentUpon>fmcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\fminicio.resx">
+      <DependentUpon>fminicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\fmlogin.resx">
+      <DependentUpon>fmlogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\fmproducto.resx">
+      <DependentUpon>fmproducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\usuario.resx">
+      <DependentUpon>usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\venta.resx">
+      <DependentUpon>venta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporte\fmreportecomprobante.resx">
+      <DependentUpon>fmreportecomprobante.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporte\fmreporteproducto.resx">
+      <DependentUpon>fmreporteproducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporte\rptcomprobante.rdlc" />
+    <EmbeddedResource Include="reporte\rptproducto.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dbventas1DataSet.xsc">
+      <DependentUpon>dbventas1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbventas1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbventas1DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbventas1DataSet.xss">
+      <DependentUpon>dbventas1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbventasDataSet.xsc">
+      <DependentUpon>dbventasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbventasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbventasDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbventasDataSet.xss">
+      <DependentUpon>dbventasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dbventasDataSet1.xsc">
+      <DependentUpon>dbventasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="dbventasDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dbventasDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dbventasDataSet1.xss">
+      <DependentUpon>dbventasDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="rptcomprobante.xsc">
+      <DependentUpon>rptcomprobante.xsd</DependentUpon>
+    </None>
+    <None Include="rptcomprobante.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rptcomprobante.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rptcomprobante.xss">
+      <DependentUpon>rptcomprobante.xsd</DependentUpon>
+    </None>
+    <None Include="rptproducto.xsc">
+      <DependentUpon>rptproducto.xsd</DependentUpon>
+    </None>
+    <None Include="rptproducto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>rptproducto.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="rptproducto.xss">
+      <DependentUpon>rptproducto.xsd</DependentUpon>
+    </None>
+    <None Include="sistemadeventas2_ClaveTemporal.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen\PNG\72\47486 - basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen\PNG\32\if_suppliers_59210.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen\PNG\256\55828 - safebox safety.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_External_Drive_Time_Machine_1215204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_users_61816.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_buy_16_22520.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_application-pgp-signature_24736.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_bag1_49362.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart_17822.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_bag1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
