@@ -23,7 +23,7 @@ Partial Class fmreportecomprobante
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.reportecomprobanteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rptcomprobante = New sistemadeventas2.rptcomprobante()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -46,9 +46,9 @@ Partial Class fmreportecomprobante
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource2.Name = "rptcomprobante"
-        ReportDataSource2.Value = Me.reportecomprobanteBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource4.Name = "rptcomprobante"
+        ReportDataSource4.Value = Me.reportecomprobanteBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource4)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "sistemadeventas2.rptcomprobante.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"

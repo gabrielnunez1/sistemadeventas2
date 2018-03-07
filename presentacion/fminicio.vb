@@ -127,4 +127,9 @@ Public Class fminicio
         fmreporteproducto.MdiParent = Me
         fmreporteproducto.Show()
     End Sub
+
+    Private Sub UsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuarioToolStripMenuItem.Click
+        usuario.MdiParent = Me
+        usuario.Show()
+    End Sub
 End Class

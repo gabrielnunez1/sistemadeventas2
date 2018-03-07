@@ -35,6 +35,7 @@ Public Class fcliente
             cmd.Parameters.AddWithValue("@apellidos", dts.gapellidos)
             cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
             cmd.Parameters.AddWithValue("@dni", dts.gdni)
+            cmd.Parameters.AddWithValue("@tipos", dts.gtipos)
             If String.IsNullOrEmpty(dts.gtelefono) Then
                 cmd.Parameters.AddWithValue("@telefono", DBNull.Value)
             Else
@@ -66,6 +67,8 @@ Public Class fcliente
             cmd.Parameters.AddWithValue("@apellidos", dts.gapellidos)
             cmd.Parameters.AddWithValue("@direccion", dts.gdireccion)
             cmd.Parameters.AddWithValue("@dni", dts.gdni)
+            cmd.Parameters.AddWithValue("@tipos", dts.gtipos)
+
             If String.IsNullOrEmpty(dts.gtelefono) Then
                 cmd.Parameters.AddWithValue("@telefono", DBNull.Value)
             Else

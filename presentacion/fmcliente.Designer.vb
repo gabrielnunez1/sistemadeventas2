@@ -27,6 +27,8 @@ Partial Class fmcliente
         Me.btnguardar2 = New System.Windows.Forms.Button()
         Me.txtdireccion = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txttipos = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
         Me.txtnombres = New System.Windows.Forms.TextBox()
@@ -72,7 +74,7 @@ Partial Class fmcliente
         '
         Me.btnguardar2.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btnguardar2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnguardar2.Location = New System.Drawing.Point(87, 339)
+        Me.btnguardar2.Location = New System.Drawing.Point(107, 330)
         Me.btnguardar2.Name = "btnguardar2"
         Me.btnguardar2.Size = New System.Drawing.Size(76, 53)
         Me.btnguardar2.TabIndex = 6
@@ -81,7 +83,7 @@ Partial Class fmcliente
         '
         'txtdireccion
         '
-        Me.txtdireccion.Location = New System.Drawing.Point(82, 232)
+        Me.txtdireccion.Location = New System.Drawing.Point(123, 165)
         Me.txtdireccion.Multiline = True
         Me.txtdireccion.Name = "txtdireccion"
         Me.txtdireccion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -90,6 +92,8 @@ Partial Class fmcliente
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txttipos)
+        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.btnguardar2)
         Me.GroupBox1.Controls.Add(Me.txtdireccion)
         Me.GroupBox1.Controls.Add(Me.btnguardar)
@@ -107,16 +111,35 @@ Partial Class fmcliente
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(1, 72)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(272, 402)
+        Me.GroupBox1.Size = New System.Drawing.Size(292, 402)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Mantenimiento"
+        '
+        'txttipos
+        '
+        Me.txttipos.FormattingEnabled = True
+        Me.txttipos.Items.AddRange(New Object() {"Monotributista", "Responsable Inscripto", "Exento"})
+        Me.txttipos.Location = New System.Drawing.Point(123, 260)
+        Me.txttipos.Name = "txttipos"
+        Me.txttipos.Size = New System.Drawing.Size(162, 21)
+        Me.txttipos.TabIndex = 13
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(5, 258)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(112, 20)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "Contribuyente:"
         '
         'btnguardar
         '
         Me.btnguardar.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnguardar.Location = New System.Drawing.Point(87, 339)
+        Me.btnguardar.Location = New System.Drawing.Point(107, 330)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(76, 53)
         Me.btnguardar.TabIndex = 4
@@ -127,7 +150,7 @@ Partial Class fmcliente
         '
         Me.btncancelar.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncancelar.Location = New System.Drawing.Point(169, 339)
+        Me.btncancelar.Location = New System.Drawing.Point(189, 330)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(76, 53)
         Me.btncancelar.TabIndex = 7
@@ -136,7 +159,7 @@ Partial Class fmcliente
         '
         'txtnombres
         '
-        Me.txtnombres.Location = New System.Drawing.Point(82, 28)
+        Me.txtnombres.Location = New System.Drawing.Point(123, 25)
         Me.txtnombres.Name = "txtnombres"
         Me.txtnombres.Size = New System.Drawing.Size(163, 20)
         Me.txtnombres.TabIndex = 0
@@ -146,7 +169,7 @@ Partial Class fmcliente
         Me.btnnuevo.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btnnuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnnuevo.Location = New System.Drawing.Point(4, 339)
+        Me.btnnuevo.Location = New System.Drawing.Point(24, 330)
         Me.btnnuevo.Name = "btnnuevo"
         Me.btnnuevo.Size = New System.Drawing.Size(76, 53)
         Me.btnnuevo.TabIndex = 5
@@ -155,7 +178,7 @@ Partial Class fmcliente
         '
         'txtdni
         '
-        Me.txtdni.Location = New System.Drawing.Point(82, 124)
+        Me.txtdni.Location = New System.Drawing.Point(123, 98)
         Me.txtdni.MaxLength = 8
         Me.txtdni.Name = "txtdni"
         Me.txtdni.Size = New System.Drawing.Size(163, 20)
@@ -165,7 +188,7 @@ Partial Class fmcliente
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(39, 122)
+        Me.Label5.Location = New System.Drawing.Point(72, 96)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(41, 20)
         Me.Label5.TabIndex = 10
@@ -173,7 +196,7 @@ Partial Class fmcliente
         '
         'txttelefono
         '
-        Me.txttelefono.Location = New System.Drawing.Point(82, 175)
+        Me.txttelefono.Location = New System.Drawing.Point(123, 133)
         Me.txttelefono.MaxLength = 10
         Me.txttelefono.Name = "txttelefono"
         Me.txttelefono.Size = New System.Drawing.Size(163, 20)
@@ -183,7 +206,7 @@ Partial Class fmcliente
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(10, 175)
+        Me.Label6.Location = New System.Drawing.Point(43, 133)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(75, 20)
         Me.Label6.TabIndex = 8
@@ -193,7 +216,7 @@ Partial Class fmcliente
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 232)
+        Me.Label3.Location = New System.Drawing.Point(39, 165)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 20)
         Me.Label3.TabIndex = 8
@@ -201,7 +224,7 @@ Partial Class fmcliente
         '
         'txtapellidos
         '
-        Me.txtapellidos.Location = New System.Drawing.Point(82, 77)
+        Me.txtapellidos.Location = New System.Drawing.Point(123, 63)
         Me.txtapellidos.Name = "txtapellidos"
         Me.txtapellidos.Size = New System.Drawing.Size(163, 20)
         Me.txtapellidos.TabIndex = 1
@@ -210,7 +233,7 @@ Partial Class fmcliente
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(8, 75)
+        Me.Label4.Location = New System.Drawing.Point(41, 61)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(77, 20)
         Me.Label4.TabIndex = 4
@@ -220,7 +243,7 @@ Partial Class fmcliente
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 28)
+        Me.Label2.Location = New System.Drawing.Point(41, 25)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(77, 20)
         Me.Label2.TabIndex = 2
@@ -230,7 +253,7 @@ Partial Class fmcliente
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(13, 25)
+        Me.Label1.Location = New System.Drawing.Point(46, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 20)
         Me.Label1.TabIndex = 0
@@ -258,9 +281,9 @@ Partial Class fmcliente
         Me.GroupBox2.Controls.Add(Me.cbocampo)
         Me.GroupBox2.Controls.Add(Me.datalistado)
         Me.GroupBox2.Controls.Add(Me.btneditar)
-        Me.GroupBox2.Location = New System.Drawing.Point(279, 72)
+        Me.GroupBox2.Location = New System.Drawing.Point(298, 72)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(566, 402)
+        Me.GroupBox2.Size = New System.Drawing.Size(567, 402)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Cliente"
@@ -336,7 +359,7 @@ Partial Class fmcliente
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.DarkCyan
-        Me.Label7.Location = New System.Drawing.Point(74, 25)
+        Me.Label7.Location = New System.Drawing.Point(78, 22)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(215, 29)
         Me.Label7.TabIndex = 24
@@ -347,7 +370,7 @@ Partial Class fmcliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(851, 478)
+        Me.ClientSize = New System.Drawing.Size(869, 478)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -356,7 +379,7 @@ Partial Class fmcliente
         Me.Controls.Add(Me.Label7)
         Me.Name = "fmcliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = ".:. Listado de Contactos .:."
+        Me.Text = ".:. Listado de Clientes .:."
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -396,4 +419,6 @@ Partial Class fmcliente
     Friend WithEvents btneditar As System.Windows.Forms.Button
     Friend WithEvents txtidcliente As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txttipos As System.Windows.Forms.ComboBox
 End Class

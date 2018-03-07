@@ -1,6 +1,6 @@
 ﻿Public Class vcliente
     Dim idcliente As Integer
-    Dim nombres, apellidos, direccion, telefono, dni As String
+    Dim nombres, apellidos, direccion, telefono, dni, tipos As String
 
     'seeter y getter
     Public Property gidcliente
@@ -51,6 +51,14 @@
             dni = value
         End Set
     End Property
+    Public Property gtipos
+        Get
+            Return tipos
+        End Get
+        Set(value)
+            tipos = value
+        End Set
+    End Property
 
     'constructores
     Public Sub New()
@@ -63,5 +71,6 @@
         gdireccion = direccion
         gtelefono = telefono
         gdni = dni
+        gtipos = tipos
     End Sub
 End Class

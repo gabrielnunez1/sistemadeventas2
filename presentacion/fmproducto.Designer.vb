@@ -64,6 +64,8 @@ Partial Class fmproducto
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.mantenimiento = New System.Windows.Forms.GroupBox()
+        Me.txtcod = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.dlg = New System.Windows.Forms.OpenFileDialog()
         CType(Me.btnlimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btncargar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,7 +200,7 @@ Partial Class fmproducto
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(67, 51)
+        Me.Label7.Location = New System.Drawing.Point(67, 85)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(70, 16)
         Me.Label7.TabIndex = 16
@@ -240,7 +242,7 @@ Partial Class fmproducto
         '
         'txtprecio_venta
         '
-        Me.txtprecio_venta.Location = New System.Drawing.Point(146, 220)
+        Me.txtprecio_venta.Location = New System.Drawing.Point(146, 229)
         Me.txtprecio_venta.MaxLength = 8
         Me.txtprecio_venta.Name = "txtprecio_venta"
         Me.txtprecio_venta.Size = New System.Drawing.Size(75, 20)
@@ -250,7 +252,7 @@ Partial Class fmproducto
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(30, 224)
+        Me.Label5.Location = New System.Drawing.Point(30, 233)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(107, 16)
         Me.Label5.TabIndex = 10
@@ -258,7 +260,7 @@ Partial Class fmproducto
         '
         'txtprecio_compra
         '
-        Me.txtprecio_compra.Location = New System.Drawing.Point(146, 184)
+        Me.txtprecio_compra.Location = New System.Drawing.Point(146, 203)
         Me.txtprecio_compra.MaxLength = 9
         Me.txtprecio_compra.Name = "txtprecio_compra"
         Me.txtprecio_compra.Size = New System.Drawing.Size(75, 20)
@@ -268,7 +270,7 @@ Partial Class fmproducto
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(17, 188)
+        Me.Label6.Location = New System.Drawing.Point(17, 207)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(120, 16)
         Me.Label6.TabIndex = 8
@@ -276,7 +278,7 @@ Partial Class fmproducto
         '
         'txtstock
         '
-        Me.txtstock.Location = New System.Drawing.Point(146, 152)
+        Me.txtstock.Location = New System.Drawing.Point(146, 177)
         Me.txtstock.Name = "txtstock"
         Me.txtstock.Size = New System.Drawing.Size(74, 20)
         Me.txtstock.TabIndex = 7
@@ -285,7 +287,7 @@ Partial Class fmproducto
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(92, 156)
+        Me.Label3.Location = New System.Drawing.Point(92, 181)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(45, 16)
         Me.Label3.TabIndex = 6
@@ -293,7 +295,7 @@ Partial Class fmproducto
         '
         'txtdescripcion
         '
-        Me.txtdescripcion.Location = New System.Drawing.Point(146, 83)
+        Me.txtdescripcion.Location = New System.Drawing.Point(146, 117)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
         Me.txtdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -325,7 +327,7 @@ Partial Class fmproducto
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(77, 17)
+        Me.Label2.Location = New System.Drawing.Point(79, 51)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(60, 16)
         Me.Label2.TabIndex = 2
@@ -352,7 +354,7 @@ Partial Class fmproducto
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(71, 19)
+        Me.Label1.Location = New System.Drawing.Point(73, 53)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(61, 13)
         Me.Label1.TabIndex = 0
@@ -364,7 +366,7 @@ Partial Class fmproducto
         Me.btnbuscarcategoria.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btnbuscarcategoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnbuscarcategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscarcategoria.Location = New System.Drawing.Point(375, 41)
+        Me.btnbuscarcategoria.Location = New System.Drawing.Point(375, 75)
         Me.btnbuscarcategoria.Name = "btnbuscarcategoria"
         Me.btnbuscarcategoria.Size = New System.Drawing.Size(40, 36)
         Me.btnbuscarcategoria.TabIndex = 19
@@ -374,7 +376,7 @@ Partial Class fmproducto
         'txtnom_categoria
         '
         Me.txtnom_categoria.Enabled = False
-        Me.txtnom_categoria.Location = New System.Drawing.Point(146, 47)
+        Me.txtnom_categoria.Location = New System.Drawing.Point(146, 81)
         Me.txtnom_categoria.Name = "txtnom_categoria"
         Me.txtnom_categoria.Size = New System.Drawing.Size(223, 20)
         Me.txtnom_categoria.TabIndex = 18
@@ -382,7 +384,7 @@ Partial Class fmproducto
         'txtidcategoria
         '
         Me.txtidcategoria.Enabled = False
-        Me.txtidcategoria.Location = New System.Drawing.Point(146, 46)
+        Me.txtidcategoria.Location = New System.Drawing.Point(146, 80)
         Me.txtidcategoria.Name = "txtidcategoria"
         Me.txtidcategoria.Size = New System.Drawing.Size(38, 20)
         Me.txtidcategoria.TabIndex = 17
@@ -405,7 +407,7 @@ Partial Class fmproducto
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(54, 84)
+        Me.Label4.Location = New System.Drawing.Point(54, 118)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(83, 16)
         Me.Label4.TabIndex = 4
@@ -413,14 +415,14 @@ Partial Class fmproducto
         '
         'txtnombre
         '
-        Me.txtnombre.Location = New System.Drawing.Point(146, 15)
+        Me.txtnombre.Location = New System.Drawing.Point(145, 50)
         Me.txtnombre.Name = "txtnombre"
         Me.txtnombre.Size = New System.Drawing.Size(269, 20)
         Me.txtnombre.TabIndex = 3
         '
         'txtidproducto
         '
-        Me.txtidproducto.Location = New System.Drawing.Point(143, 15)
+        Me.txtidproducto.Location = New System.Drawing.Point(390, 52)
         Me.txtidproducto.Name = "txtidproducto"
         Me.txtidproducto.Size = New System.Drawing.Size(272, 20)
         Me.txtidproducto.TabIndex = 1
@@ -456,6 +458,8 @@ Partial Class fmproducto
         '
         'mantenimiento
         '
+        Me.mantenimiento.Controls.Add(Me.txtcod)
+        Me.mantenimiento.Controls.Add(Me.Label8)
         Me.mantenimiento.Controls.Add(Me.btnguardar2)
         Me.mantenimiento.Controls.Add(Me.Label2)
         Me.mantenimiento.Controls.Add(Me.CheckBox1)
@@ -481,13 +485,29 @@ Partial Class fmproducto
         Me.mantenimiento.Controls.Add(Me.txtdescripcion)
         Me.mantenimiento.Controls.Add(Me.Label4)
         Me.mantenimiento.Controls.Add(Me.txtnombre)
-        Me.mantenimiento.Controls.Add(Me.txtidproducto)
         Me.mantenimiento.Location = New System.Drawing.Point(2, 78)
         Me.mantenimiento.Name = "mantenimiento"
-        Me.mantenimiento.Size = New System.Drawing.Size(423, 482)
+        Me.mantenimiento.Size = New System.Drawing.Size(429, 482)
         Me.mantenimiento.TabIndex = 28
         Me.mantenimiento.TabStop = False
         Me.mantenimiento.Text = "Mantenimiento"
+        '
+        'txtcod
+        '
+        Me.txtcod.Location = New System.Drawing.Point(145, 19)
+        Me.txtcod.Name = "txtcod"
+        Me.txtcod.Size = New System.Drawing.Size(269, 20)
+        Me.txtcod.TabIndex = 30
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(29, 23)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(110, 16)
+        Me.Label8.TabIndex = 28
+        Me.Label8.Text = "Codigo de Barra:"
         '
         'dlg
         '
@@ -504,9 +524,10 @@ Partial Class fmproducto
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.mantenimiento)
+        Me.Controls.Add(Me.txtidproducto)
         Me.Name = "fmproducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = ".:. Listado del Catálogo de productos .:."
+        Me.Text = ".:. Listado de productos .:."
         CType(Me.btnlimpiar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btncargar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datalistado, System.ComponentModel.ISupportInitialize).EndInit()
@@ -562,4 +583,6 @@ Partial Class fmproducto
     Friend WithEvents txtnombre As System.Windows.Forms.TextBox
     Friend WithEvents txtidproducto As System.Windows.Forms.TextBox
     Friend WithEvents dlg As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txtcod As System.Windows.Forms.TextBox
 End Class

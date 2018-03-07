@@ -18,6 +18,7 @@
         txtdireccion.Text = ""
         txtidcliente.Text = ""
         txtdni.Text = ""
+        txttipos.Text = ""
 
     End Sub
     Private Sub mostrar()
@@ -114,7 +115,7 @@
     End Sub
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
-        If Me.ValidateChildren = True And txtnombres.Text <> "" And txtapellidos.Text <> "" And txtdireccion.Text <> "" And txtdni.Text <> "" Then
+        If Me.ValidateChildren = True And txtnombres.Text <> "" And txtapellidos.Text <> "" And txtdireccion.Text <> "" And txtdni.Text <> "" And txtnombres.Text <> "" Then
             Try
                 Dim dts As New vcliente
                 Dim func As New fcliente
@@ -124,6 +125,7 @@
                 dts.gdireccion = txtdireccion.Text
                 dts.gtelefono = txttelefono.Text
                 dts.gdni = txtdni.Text
+                dts.gtipos = txttipos.Text
 
 
                 If func.insertar(dts) Then
@@ -173,7 +175,7 @@
         txtdireccion.Text = datalistado.SelectedCells.Item(3).Value
         txtdni.Text = datalistado.SelectedCells.Item(5).Value
         txttelefono.Text = datalistado.SelectedCells.Item(4).Value.ToString 'esto es para que acepte null
-
+        txttipos.Text = datalistado.SelectedCells.Item(7).Value.ToString
 
 
 
@@ -195,8 +197,10 @@
             venta.txtidcliente.Text = datalistado.SelectedCells.Item(6).Value
             venta.txtnombre_cliente.Text = datalistado.SelectedCells.Item(1).Value
             venta.TextBox1.Text = datalistado.SelectedCells.Item(5).Value
+            venta.tipos = datalistado.SelectedCells.Item(7).Value.ToString
             venta.foco()
             Me.Close()
+
         End If
 
 
@@ -244,7 +248,7 @@
         If result = DialogResult.OK Then
 
 
-            If Me.ValidateChildren = True And txtnombres.Text <> "" And txtapellidos.Text <> "" And txtdireccion.Text <> "" And txtdni.Text <> "" And txtidcliente.Text <> "" Then
+            If Me.ValidateChildren = True And txtnombres.Text <> "" And txtapellidos.Text <> "" And txtdireccion.Text <> "" And txtdni.Text <> "" And txtidcliente.Text <> "" And txttipos.Text <> "" Then
                 Try
                     Dim dts As New vcliente
                     Dim func As New fcliente
@@ -255,6 +259,7 @@
                     dts.gdireccion = txtdireccion.Text
                     dts.gtelefono = txttelefono.Text
                     dts.gdni = txtdni.Text
+                    dts.gtipos = txttipos.Text
 
                     If func.editar(dts) Then
                         MessageBox.Show("Cliente modificado correctamente", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -274,4 +279,8 @@
             End If
         End If
     End Sub
+
+   
+   
+   
 End Class

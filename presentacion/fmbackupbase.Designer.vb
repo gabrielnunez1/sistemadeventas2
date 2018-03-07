@@ -34,7 +34,7 @@ Partial Class fmbackupbase
         Me.btnbackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnbackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbackup.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbackup.Location = New System.Drawing.Point(25, 12)
+        Me.btnbackup.Location = New System.Drawing.Point(44, 145)
         Me.btnbackup.Name = "btnbackup"
         Me.btnbackup.Size = New System.Drawing.Size(283, 85)
         Me.btnbackup.TabIndex = 0
@@ -46,12 +46,12 @@ Partial Class fmbackupbase
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(335, 106)
+        Me.ClientSize = New System.Drawing.Size(371, 242)
         Me.Controls.Add(Me.btnbackup)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Name = "fmbackupbase"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Backup"
+        Me.Text = ".:.Backup.:."
         Me.ResumeLayout(False)
 
     End Sub

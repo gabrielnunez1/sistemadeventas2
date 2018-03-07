@@ -104,6 +104,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clientecon.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>clientecon.xsd</DependentUpon>
+    </Compile>
     <Compile Include="datos\conexion.vb" />
     <Compile Include="datos\fbackup.vb" />
     <Compile Include="datos\fcategoria.vb" />
@@ -116,16 +121,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dbventasDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dbventasDataSet3.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbventasDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="dbventasDataSet4.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbventasDataSet4.xsd</DependentUpon>
     </Compile>
     <Compile Include="logica\vcategoria.vb" />
     <Compile Include="logica\vcliente.vb" />
@@ -214,9 +209,18 @@
     <Compile Include="reporte\fmreporteproducto.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="reporte\fmcomprobanteconcliente.Designer.vb">
+      <DependentUpon>fmcomprobanteconcliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="reporte\fmcomprobanteconcliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="rptcomprobante.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>rptcomprobante.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="rptcomprobante.vb">
       <DependentUpon>rptcomprobante.xsd</DependentUpon>
     </Compile>
     <Compile Include="rptproducto.Designer.vb">
@@ -265,10 +269,25 @@
     <EmbeddedResource Include="reporte\fmreporteproducto.resx">
       <DependentUpon>fmreporteproducto.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reporte\fmcomprobanteconcliente.resx">
+      <DependentUpon>fmcomprobanteconcliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporte\rptcomprabantecon.rdlc" />
     <EmbeddedResource Include="reporte\rptcomprobante.rdlc" />
     <EmbeddedResource Include="reporte\rptproducto.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="clientecon.xsc">
+      <DependentUpon>clientecon.xsd</DependentUpon>
+    </None>
+    <None Include="clientecon.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>clientecon.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="clientecon.xss">
+      <DependentUpon>clientecon.xsd</DependentUpon>
+    </None>
     <None Include="dbventasDataSet2.xsc">
       <DependentUpon>dbventasDataSet2.xsd</DependentUpon>
     </None>
@@ -279,28 +298,6 @@
     </None>
     <None Include="dbventasDataSet2.xss">
       <DependentUpon>dbventasDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="dbventasDataSet3.xsc">
-      <DependentUpon>dbventasDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="dbventasDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dbventasDataSet3.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dbventasDataSet3.xss">
-      <DependentUpon>dbventasDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="dbventasDataSet4.xsc">
-      <DependentUpon>dbventasDataSet4.xsd</DependentUpon>
-    </None>
-    <None Include="dbventasDataSet4.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dbventasDataSet4.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dbventasDataSet4.xss">
-      <DependentUpon>dbventasDataSet4.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">

@@ -22,6 +22,7 @@
         txtprecio_compra.Text = "0"
         txtstock.Text = "0"
         txtidproducto.Text = ""
+        txtcod.Text = ""
         txtfecha_vencimiento.Text = DateTime.Today
         CheckBox1.CheckState = CheckState.Unchecked
         imagen.Image = Nothing
@@ -106,6 +107,7 @@
                 dts.gprecio_venta = txtprecio_venta.Text
                 dts.gfecha_vencimiento = txtfecha_vencimiento.Text
                 dts.gimagen = ruta
+                dts.gcod = txtcod.Text
 
                 If CheckBox1.CheckState = CheckState.Checked Then
                     dts.gfecha_vencimiento = txtfecha_vencimiento.Text
@@ -153,7 +155,7 @@
         Me.Size = New System.Drawing.Size(1312, 600)
         Me.GroupBox2.Location = New Point(436, 79)
         btnguardar2.Visible = True
-
+        txtcod.Text = datalistado.SelectedCells.Item(11).Value.ToString
         txtidproducto.Text = datalistado.SelectedCells.Item(1).Value
         txtidcategoria.Text = datalistado.SelectedCells.Item(2).Value
         txtnom_categoria.Text = datalistado.SelectedCells.Item(3).Value
@@ -267,11 +269,10 @@
             venta.Campo2 = datalistado.SelectedCells.Item(5).Value.ToString 'descripcion
             venta.Campo3 = datalistado.SelectedCells.Item(8).Value 'precio_venta
             venta.CampoP = datalistado.SelectedCells.Item(1).Value 'iproducto
-            venta.ComboBox1.Text = datalistado.SelectedCells.Item(3).Value
-            venta.TextBox3.Text = datalistado.SelectedCells.Item(7).Value
             venta.ComboBox1.Text = datalistado.SelectedCells.Item(4).Value ' nombre producto
             venta.TextBox3.Text = datalistado.SelectedCells.Item(8).Value 'precio_venta
             venta.txtcantidad.Maximum = datalistado.SelectedCells.Item(6).Value 'stock
+            venta.txtcod.Text = datalistado.SelectedCells.Item(11).Value.ToString
             If datalistado.SelectedCells.Item(10).Value.ToString <> "" Then
                 venta.imagen.Image = Image.FromFile(datalistado.SelectedCells.Item(10).Value.ToString)
             Else
@@ -323,41 +324,42 @@
         Dim result As DialogResult
         result = MessageBox.Show("¿Realmente desea editar los datos del Producto?", "Modificando registros", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)
         If result = DialogResult.OK Then
-            If Me.ValidateChildren = True And txtnombre.Text <> "" And txtstock.Text <> "" And txtprecio_compra.Text <> "" And txtprecio_venta.Text <> "" And txtidproducto.Text <> "" Then
-                Try
-                    Dim dts As New vproducto
-                    Dim func As New fproducto
-                    dts.gidproducto = txtidproducto.Text
-                    dts.gnombre = txtnombre.Text
-                    dts.gidcategoria = txtidcategoria.Text
-                    dts.gdescripcion = txtdescripcion.Text
-                    dts.gstock = txtstock.Text
-                    dts.gprecio_compra = txtprecio_compra.Text
-                    dts.gprecio_venta = txtprecio_venta.Text
+            Try
+                Dim dts As New vproducto
+                Dim func As New fproducto
 
-                    If CheckBox1.CheckState = CheckState.Checked Then
-                        dts.gfecha_vencimiento = txtfecha_vencimiento.Text
-                    Else : CheckBox1.CheckState = CheckState.Unchecked
-                        dts.gfecha_vencimiento = Nothing
-                    End If
+                dts.gidproducto = txtidproducto.Text
+                dts.gnombre = txtnombre.Text
+                dts.gidcategoria = txtidcategoria.Text
+                dts.gdescripcion = txtdescripcion.Text
+                dts.gstock = txtstock.Text
+                dts.gprecio_compra = txtprecio_compra.Text
+                dts.gprecio_venta = txtprecio_venta.Text
+                dts.gcod = txtcod.Text
 
-               
+                If CheckBox1.CheckState = CheckState.Checked Then
+                    dts.gfecha_vencimiento = txtfecha_vencimiento.Text
+                Else : CheckBox1.CheckState = CheckState.Unchecked
+                    dts.gfecha_vencimiento = Nothing
+                End If
 
-                    If imagen.Image Is Nothing Then
-                        ruta = ""
+
+
+                If imagen.Image Is Nothing Then
+                    ruta = ""
+
+                Else
+
+                    If ruta <> "" Then
+
+                        dts.gimagen = ruta
 
                     Else
-
-                        If ruta <> "" Then
-
-                            dts.gimagen = ruta
-
-                        Else
-                            ruta = datalistado.SelectedCells.Item(10).Value.ToString
-                            dts.gimagen = ruta
-                        End If
+                        ruta = datalistado.SelectedCells.Item(10).Value.ToString
+                        dts.gimagen = ruta
                     End If
-                
+                End If
+
 
 
                 If txtprecio_compra.Text < txtprecio_venta.Text Then
@@ -374,13 +376,17 @@
                 Else
                     MessageBox.Show("Precio Compra no puede ser un numero mayor a precio venta", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
-                Catch ex As Exception
-                    MsgBox(ex.Message)
-                End Try
-            Else
-                MessageBox.Show("Falta inglesar algun datos", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MessageBox.Show("Falta inglesar algun datos", "Modificando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            End If
         End If
+
     End Sub
+
+   
+    
+
 End Class

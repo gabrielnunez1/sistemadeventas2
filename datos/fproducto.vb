@@ -38,6 +38,7 @@ Public Class fproducto
             cmd.Parameters.AddWithValue("@precio_compra", dts.gprecio_compra)
             cmd.Parameters.AddWithValue("@precio_venta", dts.gprecio_venta)
 
+
             If String.IsNullOrEmpty(dts.gdescripcion) Then
                 cmd.Parameters.AddWithValue("@descripcion", DBNull.Value)
             Else
@@ -55,7 +56,11 @@ Public Class fproducto
             Else
                 cmd.Parameters.AddWithValue("@imagen", dts.gimagen)
             End If
-
+            If String.IsNullOrEmpty(dts.gcod) Then
+                cmd.Parameters.AddWithValue("@cod", DBNull.Value)
+            Else
+                cmd.Parameters.AddWithValue("@cod", dts.gcod)
+            End If
 
             If cmd.ExecuteNonQuery Then
                 Return True
@@ -86,6 +91,7 @@ Public Class fproducto
             cmd.Parameters.AddWithValue("@precio_venta", dts.gprecio_venta)
 
 
+
             If String.IsNullOrEmpty(dts.gdescripcion) Then
                 cmd.Parameters.AddWithValue("@descripcion", DBNull.Value)
             Else
@@ -103,6 +109,12 @@ Public Class fproducto
             Else
                 cmd.Parameters.AddWithValue("@imagen", dts.gimagen)
             End If
+            If String.IsNullOrEmpty(dts.gcod) Then
+                cmd.Parameters.AddWithValue("@cod", DBNull.Value)
+            Else
+                cmd.Parameters.AddWithValue("@cod", dts.gcod)
+            End If
+
 
             If cmd.ExecuteNonQuery Then
                 Return True

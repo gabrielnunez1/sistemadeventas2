@@ -349,6 +349,7 @@ Partial Class usuario
         '
         'GroupBox1
         '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.GroupBox1.Controls.Add(Me.btnguardar)
         Me.GroupBox1.Controls.Add(Me.GroupBox2)
         Me.GroupBox1.Controls.Add(Me.btnnuevo)
@@ -385,7 +386,7 @@ Partial Class usuario
         Me.ClientSize = New System.Drawing.Size(878, 390)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "usuario"
-        Me.Text = "usuario"
+        Me.Text = ".:.Usuario.:."
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.datalistado, System.ComponentModel.ISupportInitialize).EndInit()
