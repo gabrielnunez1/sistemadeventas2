@@ -1,5 +1,5 @@
 ﻿Imports System.Windows.Forms
-
+Imports System.Diagnostics
 Public Class fminicio
     Public nVenta As Integer = 0
     Private Sub ShowNewForm(ByVal sender As Object, ByVal e As EventArgs)
@@ -109,7 +109,7 @@ Public Class fminicio
     End Sub
     Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
         Try
-            Shell("C:\Users\Gabriel\Documents\sistemadeventa\ayuda\Índice.html")
+            Process.Start("C:\Users\Gabriel\Documents\sistemadeventa\ayuda\Índice.html")
         Catch ex As Exception
         End Try
     End Sub

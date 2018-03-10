@@ -3,6 +3,7 @@
     Private Sub fmcategoria_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         mostrar()
+        datalistado.Columns(2).Width = 200
         ocultar_columnas()
     End Sub
 
@@ -64,7 +65,7 @@
         End Try
     End Sub
     Private Sub ocultar_columnas()
-        datalistado.Columns(2).Visible = False
+        datalistado.Columns(1).Visible = False
 
     End Sub
 

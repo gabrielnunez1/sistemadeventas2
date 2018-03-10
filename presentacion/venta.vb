@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class venta
+
     Private dt As New DataTable
     Public CampoP As Integer
     Public Campo3 As Decimal = 0
@@ -63,37 +64,37 @@ Public Class venta
                 MessageBox.Show("Error al realizar el cobro debe ingresar cliente.", "Error al cobrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
                 Return
             End If
-            End If
-            fmcomprobanteconcliente.txtidventa.Text = Me.txtidventa.Text
-            Dim con As New SqlConnection
-            Dim cmd As New SqlCommand
+        End If
+        fmcomprobanteconcliente.txtidventa.Text = Me.txtidventa.Text
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
 
-            Try
-                con.ConnectionString = "Data Source=GABRIEL;Initial Catalog=dbventas1;Integrated Security=True"
-                con.Open()
-                cmd.Connection = con
-                cmd.CommandText = "SELECT COUNT (*) FROM venta"
-                Dim a As Integer = Convert.ToInt16(cmd.ExecuteScalar) + 1
-                If consumidorfinal.CheckState = CheckState.Checked Then
-                    Dim b As String = "Consumidor final"
+        Try
+            con.ConnectionString = "Data Source=GABRIEL;Initial Catalog=dbventas1;Integrated Security=True"
+            con.Open()
+            cmd.Connection = con
+            cmd.CommandText = "SELECT COUNT (*) FROM venta"
+            Dim a As Integer = Convert.ToInt16(cmd.ExecuteScalar) + 1
+            If consumidorfinal.CheckState = CheckState.Checked Then
+                Dim b As String = "Consumidor final"
                 cmd.CommandText = "INSERT INTO venta (idventa,fecha,tipo) VALUES ('" & a & "','" & DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "") + " " + DateTime.Now.ToString("HH:mm:ss") & "','" & b & "');"
 
             Else
                 cmd.CommandText = "INSERT INTO venta (idventa,idcliente,fecha,tipo) VALUES ('" & a & "','" & Integer.Parse(txtidcliente.Text) & "','" & DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "") + " " + DateTime.Now.ToString("HH:mm:ss") & "','" & tipos & "');"
                 fmcomprobanteconcliente.txtidventa.Text = a
-                End If
-                cmd.ExecuteNonQuery()
-                cargarDetalleVenta(a, cmd)
-                If consumidorfinal.CheckState = CheckState.Checked Then
-                    fmreportecomprobante.ShowDialog()
-                Else
-                    fmcomprobanteconcliente.ShowDialog()
-                End If
-            Catch ex As Exception
-                MessageBox.Show("Error al cobrar " & ex.Message, "Error al realizar el cobro")
-            Finally
-                con.Close()
-            End Try
+            End If
+            cmd.ExecuteNonQuery()
+            cargarDetalleVenta(a, cmd)
+            If consumidorfinal.CheckState = CheckState.Checked Then
+                fmreportecomprobante.ShowDialog()
+            Else
+                fmcomprobanteconcliente.ShowDialog()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error al cobrar " & ex.Message, "Error al realizar el cobro")
+        Finally
+            con.Close()
+        End Try
         limpia()
 
     End Sub
@@ -123,7 +124,7 @@ Public Class venta
         For Each row As DataGridViewRow In Me.datalistado.Rows
             cantidad = row.Cells("Cantidad").Value
             precio = row.Cells("Precio").Value
-            idproducto = row.Cells("idproducto").Value    
+            idproducto = row.Cells("idproducto").Value
             total = row.Cells("Total").Value
             cmd.CommandText = "SELECT COUNT (*) FROM detalle"
             Dim iddetalleventa As Integer = Convert.ToInt16(cmd.ExecuteScalar) + 1
@@ -191,7 +192,7 @@ Public Class venta
         Label13.Text = 0
         txtidcliente.Visible = False
         ComboBox1.Enabled = False
-
+        datalistado.Columns("Nombre").Width = 190
     End Sub
 
     Public Sub foco()
@@ -275,7 +276,7 @@ Public Class venta
     End Sub
 
     Private Sub txtcod_LostFocus(sender As Object, e As EventArgs) Handles txtcod.LostFocus
-    
+
         If Not txtcod.Text = "" Then
 
             Dim clave As String = txtcod.Text
@@ -345,6 +346,7 @@ Public Class venta
 
         End If
     End Sub
+
 
 
 End Class

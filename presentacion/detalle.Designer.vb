@@ -22,6 +22,7 @@ Partial Class detalle
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(detalle))
         Me.Label11 = New System.Windows.Forms.Label()
         Me.btnsalir = New System.Windows.Forms.Button()
         Me.datalistado = New System.Windows.Forms.GroupBox()
@@ -225,6 +226,7 @@ Partial Class detalle
         Me.btnnuevaventa.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btnnuevaventa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnnuevaventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnnuevaventa.Image = CType(resources.GetObject("btnnuevaventa.Image"), System.Drawing.Image)
         Me.btnnuevaventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btnnuevaventa.Location = New System.Drawing.Point(122, 444)
         Me.btnnuevaventa.Name = "btnnuevaventa"
@@ -237,6 +239,7 @@ Partial Class detalle
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(3, 1)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(72, 72)

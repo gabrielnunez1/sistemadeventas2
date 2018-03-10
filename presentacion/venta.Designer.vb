@@ -23,7 +23,8 @@ Partial Class venta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.txtnombre_cliente = New System.Windows.Forms.TextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(venta))
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btncobrar = New System.Windows.Forms.Button()
         Me.cbeliminar = New System.Windows.Forms.CheckBox()
@@ -42,7 +43,13 @@ Partial Class venta
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.lblhora = New System.Windows.Forms.Label()
+        Me.txtnombre_cliente = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.consumidorfinal = New System.Windows.Forms.CheckBox()
+        Me.txtcod = New System.Windows.Forms.TextBox()
+        Me.ComboBox1 = New System.Windows.Forms.TextBox()
+        Me.imagen = New System.Windows.Forms.PictureBox()
         Me.datalistado = New System.Windows.Forms.DataGridView()
         Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,12 +58,6 @@ Partial Class venta
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idproducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.txtcod = New System.Windows.Forms.TextBox()
-        Me.consumidorfinal = New System.Windows.Forms.CheckBox()
-        Me.ComboBox1 = New System.Windows.Forms.TextBox()
-        Me.imagen = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.btnbuscar_cliente = New System.Windows.Forms.Button()
@@ -68,32 +69,32 @@ Partial Class venta
         Me.inexistente = New System.Windows.Forms.LinkLabel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.txtcantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.datalistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         CType(Me.imagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.datalistado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
-        'txtnombre_cliente
+        'Label11
         '
-        Me.txtnombre_cliente.Enabled = False
-        Me.txtnombre_cliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtnombre_cliente.Location = New System.Drawing.Point(71, 26)
-        Me.txtnombre_cliente.Name = "txtnombre_cliente"
-        Me.txtnombre_cliente.Size = New System.Drawing.Size(121, 31)
-        Me.txtnombre_cliente.TabIndex = 40
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.DarkCyan
+        Me.Label11.Location = New System.Drawing.Point(78, 29)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(235, 29)
+        Me.Label11.TabIndex = 49
+        Me.Label11.Text = "Registro de Ventas"
         '
         'Label10
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(517, 180)
+        Me.Label10.Location = New System.Drawing.Point(511, 166)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(60, 18)
         Me.Label10.TabIndex = 79
@@ -103,8 +104,9 @@ Partial Class venta
         '
         Me.btncobrar.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btncobrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btncobrar.Image = CType(resources.GetObject("btncobrar.Image"), System.Drawing.Image)
         Me.btncobrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btncobrar.Location = New System.Drawing.Point(262, 434)
+        Me.btncobrar.Location = New System.Drawing.Point(258, 458)
         Me.btncobrar.Name = "btncobrar"
         Me.btncobrar.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btncobrar.Size = New System.Drawing.Size(104, 53)
@@ -117,7 +119,7 @@ Partial Class venta
         '
         Me.cbeliminar.AutoSize = True
         Me.cbeliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbeliminar.Location = New System.Drawing.Point(6, 175)
+        Me.cbeliminar.Location = New System.Drawing.Point(6, 161)
         Me.cbeliminar.Name = "cbeliminar"
         Me.cbeliminar.Size = New System.Drawing.Size(75, 20)
         Me.cbeliminar.TabIndex = 77
@@ -128,7 +130,7 @@ Partial Class venta
         '
         Me.btneliminar.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btneliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btneliminar.Location = New System.Drawing.Point(6, 384)
+        Me.btneliminar.Location = New System.Drawing.Point(6, 412)
         Me.btneliminar.Name = "btneliminar"
         Me.btneliminar.Size = New System.Drawing.Size(90, 35)
         Me.btneliminar.TabIndex = 76
@@ -141,18 +143,17 @@ Partial Class venta
         Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(609, 115)
+        Me.Button2.Location = New System.Drawing.Point(601, 103)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(112, 66)
+        Me.Button2.Size = New System.Drawing.Size(138, 78)
         Me.Button2.TabIndex = 74
-        Me.Button2.Text = "&Agregar Producto"
+        Me.Button2.Text = "&Agregar producto"
         Me.Button2.UseVisualStyleBackColor = False
-        Me.Button2.Visible = False
         '
         'txtcantidad
         '
         Me.txtcantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcantidad.Location = New System.Drawing.Point(440, 137)
+        Me.txtcantidad.Location = New System.Drawing.Point(434, 123)
         Me.txtcantidad.Maximum = New Decimal(New Integer() {100000, 0, 0, 0})
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.Size = New System.Drawing.Size(52, 26)
@@ -162,7 +163,7 @@ Partial Class venta
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(374, 142)
+        Me.Label9.Location = New System.Drawing.Point(368, 128)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(70, 18)
         Me.Label9.TabIndex = 70
@@ -173,7 +174,7 @@ Partial Class venta
         Me.btnbuscar.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btnbuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar.Location = New System.Drawing.Point(320, 136)
+        Me.btnbuscar.Location = New System.Drawing.Point(314, 122)
         Me.btnbuscar.Name = "btnbuscar"
         Me.btnbuscar.Size = New System.Drawing.Size(48, 27)
         Me.btnbuscar.TabIndex = 69
@@ -184,7 +185,7 @@ Partial Class venta
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(46, 140)
+        Me.Label5.Location = New System.Drawing.Point(57, 127)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(73, 18)
         Me.Label5.TabIndex = 67
@@ -194,7 +195,7 @@ Partial Class venta
         '
         Me.TextBox3.Enabled = False
         Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(546, 137)
+        Me.TextBox3.Location = New System.Drawing.Point(540, 123)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(55, 26)
         Me.TextBox3.TabIndex = 33
@@ -203,7 +204,7 @@ Partial Class venta
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(495, 142)
+        Me.Label8.Location = New System.Drawing.Point(489, 128)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(55, 18)
         Me.Label8.TabIndex = 30
@@ -215,7 +216,7 @@ Partial Class venta
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.PictureBox1)
         Me.GroupBox3.Controls.Add(Me.Label12)
-        Me.GroupBox3.Location = New System.Drawing.Point(394, 370)
+        Me.GroupBox3.Location = New System.Drawing.Point(388, 394)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(309, 58)
         Me.GroupBox3.TabIndex = 80
@@ -276,10 +277,20 @@ Partial Class venta
         '
         Me.lblhora.AutoSize = True
         Me.lblhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblhora.Location = New System.Drawing.Point(0, 6)
+        Me.lblhora.Location = New System.Drawing.Point(493, 2)
         Me.lblhora.Name = "lblhora"
-        Me.lblhora.Size = New System.Drawing.Size(0, 25)
+        Me.lblhora.Size = New System.Drawing.Size(19, 25)
         Me.lblhora.TabIndex = 47
+        Me.lblhora.Text = "."
+        '
+        'txtnombre_cliente
+        '
+        Me.txtnombre_cliente.Enabled = False
+        Me.txtnombre_cliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnombre_cliente.Location = New System.Drawing.Point(71, 26)
+        Me.txtnombre_cliente.Name = "txtnombre_cliente"
+        Me.txtnombre_cliente.Size = New System.Drawing.Size(121, 31)
+        Me.txtnombre_cliente.TabIndex = 40
         '
         'Label14
         '
@@ -291,18 +302,89 @@ Partial Class venta
         Me.Label14.TabIndex = 43
         Me.Label14.Text = "DNI:"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.GroupBox2.Controls.Add(Me.consumidorfinal)
+        Me.GroupBox2.Controls.Add(Me.txtcod)
+        Me.GroupBox2.Controls.Add(Me.ComboBox1)
+        Me.GroupBox2.Controls.Add(Me.imagen)
+        Me.GroupBox2.Controls.Add(Me.datalistado)
+        Me.GroupBox2.Controls.Add(Me.GroupBox1)
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.btncobrar)
+        Me.GroupBox2.Controls.Add(Me.cbeliminar)
+        Me.GroupBox2.Controls.Add(Me.btneliminar)
+        Me.GroupBox2.Controls.Add(Me.btncancelar)
+        Me.GroupBox2.Controls.Add(Me.Button2)
+        Me.GroupBox2.Controls.Add(Me.txtcantidad)
+        Me.GroupBox2.Controls.Add(Me.Label9)
+        Me.GroupBox2.Controls.Add(Me.Label1)
+        Me.GroupBox2.Controls.Add(Me.btnbuscar)
+        Me.GroupBox2.Controls.Add(Me.txtidventa)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.TextBox3)
+        Me.GroupBox2.Controls.Add(Me.Label8)
+        Me.GroupBox2.Controls.Add(Me.inexistente)
+        Me.GroupBox2.Controls.Add(Me.GroupBox3)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(4, 82)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(744, 517)
+        Me.GroupBox2.TabIndex = 48
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Listado de Ventas"
+        '
+        'consumidorfinal
+        '
+        Me.consumidorfinal.AutoSize = True
+        Me.consumidorfinal.Checked = True
+        Me.consumidorfinal.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.consumidorfinal.Location = New System.Drawing.Point(22, 49)
+        Me.consumidorfinal.Name = "consumidorfinal"
+        Me.consumidorfinal.Size = New System.Drawing.Size(151, 24)
+        Me.consumidorfinal.TabIndex = 83
+        Me.consumidorfinal.Text = "Consumidor Final"
+        Me.consumidorfinal.UseVisualStyleBackColor = True
+        '
+        'txtcod
+        '
+        Me.txtcod.Location = New System.Drawing.Point(126, 91)
+        Me.txtcod.Name = "txtcod"
+        Me.txtcod.Size = New System.Drawing.Size(183, 26)
+        Me.txtcod.TabIndex = 82
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.Location = New System.Drawing.Point(126, 123)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(183, 26)
+        Me.ComboBox1.TabIndex = 81
+        '
+        'imagen
+        '
+        Me.imagen.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.imagen.Location = New System.Drawing.Point(514, 187)
+        Me.imagen.Name = "imagen"
+        Me.imagen.Size = New System.Drawing.Size(225, 205)
+        Me.imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.imagen.TabIndex = 39
+        Me.imagen.TabStop = False
+        '
         'datalistado
         '
         Me.datalistado.AllowUserToAddRows = False
         Me.datalistado.AllowUserToDeleteRows = False
         Me.datalistado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.datalistado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar, Me.nombre, Me.descripcion, Me.cantidad, Me.precio, Me.total, Me.idproducto})
-        Me.datalistado.Location = New System.Drawing.Point(6, 201)
+        Me.datalistado.Location = New System.Drawing.Point(0, 187)
         Me.datalistado.Name = "datalistado"
         Me.datalistado.ReadOnly = True
         Me.datalistado.RowHeadersVisible = False
         Me.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datalistado.Size = New System.Drawing.Size(508, 177)
+        Me.datalistado.Size = New System.Drawing.Size(508, 205)
         Me.datalistado.TabIndex = 75
         '
         'Eliminar
@@ -355,89 +437,6 @@ Partial Class venta
         Me.idproducto.ReadOnly = True
         Me.idproducto.Visible = False
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.DarkCyan
-        Me.Label11.Location = New System.Drawing.Point(76, 30)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(235, 29)
-        Me.Label11.TabIndex = 49
-        Me.Label11.Text = "Registro de Ventas"
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.GroupBox2.Controls.Add(Me.txtcod)
-        Me.GroupBox2.Controls.Add(Me.consumidorfinal)
-        Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.imagen)
-        Me.GroupBox2.Controls.Add(Me.datalistado)
-        Me.GroupBox2.Controls.Add(Me.GroupBox1)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.btncobrar)
-        Me.GroupBox2.Controls.Add(Me.cbeliminar)
-        Me.GroupBox2.Controls.Add(Me.btneliminar)
-        Me.GroupBox2.Controls.Add(Me.btncancelar)
-        Me.GroupBox2.Controls.Add(Me.Button2)
-        Me.GroupBox2.Controls.Add(Me.txtcantidad)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.btnbuscar)
-        Me.GroupBox2.Controls.Add(Me.txtidventa)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.TextBox3)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.inexistente)
-        Me.GroupBox2.Controls.Add(Me.GroupBox3)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(2, 83)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(730, 493)
-        Me.GroupBox2.TabIndex = 48
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Listado de Ventas"
-        '
-        'txtcod
-        '
-        Me.txtcod.Location = New System.Drawing.Point(115, 95)
-        Me.txtcod.Name = "txtcod"
-        Me.txtcod.Size = New System.Drawing.Size(199, 26)
-        Me.txtcod.TabIndex = 83
-        '
-        'consumidorfinal
-        '
-        Me.consumidorfinal.AutoSize = True
-        Me.consumidorfinal.Checked = True
-        Me.consumidorfinal.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.consumidorfinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.consumidorfinal.Location = New System.Drawing.Point(38, 57)
-        Me.consumidorfinal.Name = "consumidorfinal"
-        Me.consumidorfinal.Size = New System.Drawing.Size(151, 24)
-        Me.consumidorfinal.TabIndex = 82
-        Me.consumidorfinal.Text = "Consumidor Final"
-        Me.consumidorfinal.UseVisualStyleBackColor = True
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Location = New System.Drawing.Point(115, 136)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(199, 26)
-        Me.ComboBox1.TabIndex = 81
-        '
-        'imagen
-        '
-        Me.imagen.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.imagen.Location = New System.Drawing.Point(520, 201)
-        Me.imagen.Name = "imagen"
-        Me.imagen.Size = New System.Drawing.Size(204, 177)
-        Me.imagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.imagen.TabIndex = 39
-        Me.imagen.TabStop = False
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -447,7 +446,7 @@ Partial Class venta
         Me.GroupBox1.Controls.Add(Me.btnbuscar_cliente)
         Me.GroupBox1.Controls.Add(Me.txtidcliente)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(225, 18)
+        Me.GroupBox1.Location = New System.Drawing.Point(276, 14)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(463, 71)
         Me.GroupBox1.TabIndex = 47
@@ -468,9 +467,9 @@ Partial Class venta
         Me.btnbuscar_cliente.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btnbuscar_cliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnbuscar_cliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnbuscar_cliente.Location = New System.Drawing.Point(396, 25)
+        Me.btnbuscar_cliente.Location = New System.Drawing.Point(396, 23)
         Me.btnbuscar_cliente.Name = "btnbuscar_cliente"
-        Me.btnbuscar_cliente.Size = New System.Drawing.Size(48, 31)
+        Me.btnbuscar_cliente.Size = New System.Drawing.Size(55, 30)
         Me.btnbuscar_cliente.TabIndex = 41
         Me.btnbuscar_cliente.Text = "..."
         Me.btnbuscar_cliente.UseVisualStyleBackColor = False
@@ -497,17 +496,17 @@ Partial Class venta
         '
         Me.btncancelar.BackColor = System.Drawing.Color.PaleTurquoise
         Me.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btncancelar.Location = New System.Drawing.Point(372, 434)
+        Me.btncancelar.Location = New System.Drawing.Point(368, 458)
         Me.btncancelar.Name = "btncancelar"
         Me.btncancelar.Size = New System.Drawing.Size(104, 53)
         Me.btncancelar.TabIndex = 38
-        Me.btncancelar.Text = "Cancelar Venta "
+        Me.btncancelar.Text = "&Cancelar Venta "
         Me.btncancelar.UseVisualStyleBackColor = False
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(125, 143)
+        Me.Label1.Location = New System.Drawing.Point(82, 341)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(66, 20)
         Me.Label1.TabIndex = 28
@@ -516,7 +515,7 @@ Partial Class venta
         '
         'txtidventa
         '
-        Me.txtidventa.Location = New System.Drawing.Point(197, 137)
+        Me.txtidventa.Location = New System.Drawing.Point(154, 337)
         Me.txtidventa.Name = "txtidventa"
         Me.txtidventa.Size = New System.Drawing.Size(50, 26)
         Me.txtidventa.TabIndex = 29
@@ -536,62 +535,50 @@ Partial Class venta
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(14, 102)
+        Me.Label3.Location = New System.Drawing.Point(9, 95)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(104, 18)
+        Me.Label3.Size = New System.Drawing.Size(118, 18)
         Me.Label3.TabIndex = 84
-        Me.Label3.Text = "Cod. de Barra:"
+        Me.Label3.Text = "Codigo de barra:"
         '
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(2, 3)
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(4, 2)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(71, 74)
         Me.PictureBox2.TabIndex = 50
         Me.PictureBox2.TabStop = False
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.PaleTurquoise
-        Me.Panel1.Controls.Add(Me.lblhora)
-        Me.Panel1.Location = New System.Drawing.Point(500, 41)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(226, 36)
-        Me.Panel1.TabIndex = 51
-        '
         'venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(735, 578)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.ClientSize = New System.Drawing.Size(749, 602)
         Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.lblhora)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaximizeBox = False
         Me.Name = "venta"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = ".:.Venta.:."
+        Me.Text = ".:.Ventas.:."
         CType(Me.txtcantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.datalistado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.imagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.datalistado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txtnombre_cliente As System.Windows.Forms.TextBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents btncobrar As System.Windows.Forms.Button
     Friend WithEvents cbeliminar As System.Windows.Forms.CheckBox
@@ -611,7 +598,11 @@ Partial Class venta
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents lblhora As System.Windows.Forms.Label
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents txtnombre_cliente As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents imagen As System.Windows.Forms.PictureBox
     Friend WithEvents datalistado As System.Windows.Forms.DataGridView
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents nombre As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -620,10 +611,6 @@ Partial Class venta
     Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents total As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idproducto As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents imagen As System.Windows.Forms.PictureBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents btnbuscar_cliente As System.Windows.Forms.Button
@@ -634,7 +621,6 @@ Partial Class venta
     Friend WithEvents txtidventa As System.Windows.Forms.TextBox
     Friend WithEvents inexistente As System.Windows.Forms.LinkLabel
     Friend WithEvents consumidorfinal As System.Windows.Forms.CheckBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtcod As System.Windows.Forms.TextBox
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

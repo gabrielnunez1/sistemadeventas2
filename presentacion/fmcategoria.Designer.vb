@@ -23,6 +23,7 @@ Partial Class fmcategoria
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(fmcategoria))
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
@@ -53,6 +54,7 @@ Partial Class fmcategoria
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(2, 3)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(67, 66)

@@ -23,6 +23,8 @@ Partial Class fmbackupbase
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnbackup = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnbackup
@@ -34,12 +36,22 @@ Partial Class fmbackupbase
         Me.btnbackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.btnbackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnbackup.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnbackup.Location = New System.Drawing.Point(44, 145)
+        Me.btnbackup.Location = New System.Drawing.Point(42, 145)
         Me.btnbackup.Name = "btnbackup"
         Me.btnbackup.Size = New System.Drawing.Size(283, 85)
         Me.btnbackup.TabIndex = 0
         Me.btnbackup.Text = "Backup"
         Me.btnbackup.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.sistemadeventas2.My.Resources.Resources.if_External_Drive_Time_Machine_1215204
+        Me.PictureBox1.Location = New System.Drawing.Point(87, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(193, 127)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'fmbackupbase
         '
@@ -47,13 +59,16 @@ Partial Class fmbackupbase
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(371, 242)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnbackup)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
         Me.Name = "fmbackupbase"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = ".:.Backup.:."
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents btnbackup As System.Windows.Forms.Button
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

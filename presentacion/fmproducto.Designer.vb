@@ -25,8 +25,6 @@ Partial Class fmproducto
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(fmproducto))
         Me.btnguardar2 = New System.Windows.Forms.Button()
-        Me.btnlimpiar = New System.Windows.Forms.PictureBox()
-        Me.btncargar = New System.Windows.Forms.PictureBox()
         Me.cbeliminar = New System.Windows.Forms.CheckBox()
         Me.btneliminar = New System.Windows.Forms.Button()
         Me.inexistente = New System.Windows.Forms.LinkLabel()
@@ -35,7 +33,6 @@ Partial Class fmproducto
         Me.datalistado = New System.Windows.Forms.DataGridView()
         Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.imagen = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnguardar = New System.Windows.Forms.Button()
         Me.btncancelar = New System.Windows.Forms.Button()
@@ -47,7 +44,6 @@ Partial Class fmproducto
         Me.txtstock = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.btneditar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -66,15 +62,19 @@ Partial Class fmproducto
         Me.mantenimiento = New System.Windows.Forms.GroupBox()
         Me.txtcod = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.btnlimpiar = New System.Windows.Forms.PictureBox()
+        Me.btncargar = New System.Windows.Forms.PictureBox()
+        Me.imagen = New System.Windows.Forms.PictureBox()
         Me.dlg = New System.Windows.Forms.OpenFileDialog()
-        CType(Me.btnlimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btncargar, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.datalistado, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imagen, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.erroricono, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.mantenimiento.SuspendLayout()
+        CType(Me.btnlimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btncargar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imagen, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnguardar2
@@ -85,28 +85,8 @@ Partial Class fmproducto
         Me.btnguardar2.Name = "btnguardar2"
         Me.btnguardar2.Size = New System.Drawing.Size(82, 34)
         Me.btnguardar2.TabIndex = 27
-        Me.btnguardar2.Text = "Guardar2"
+        Me.btnguardar2.Text = "Guardar"
         Me.btnguardar2.UseVisualStyleBackColor = False
-        '
-        'btnlimpiar
-        '
-        Me.btnlimpiar.BackgroundImage = CType(resources.GetObject("btnlimpiar.BackgroundImage"), System.Drawing.Image)
-        Me.btnlimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnlimpiar.Location = New System.Drawing.Point(336, 373)
-        Me.btnlimpiar.Name = "btnlimpiar"
-        Me.btnlimpiar.Size = New System.Drawing.Size(79, 62)
-        Me.btnlimpiar.TabIndex = 25
-        Me.btnlimpiar.TabStop = False
-        '
-        'btncargar
-        '
-        Me.btncargar.BackgroundImage = CType(resources.GetObject("btncargar.BackgroundImage"), System.Drawing.Image)
-        Me.btncargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btncargar.Location = New System.Drawing.Point(336, 281)
-        Me.btncargar.Name = "btncargar"
-        Me.btncargar.Size = New System.Drawing.Size(79, 70)
-        Me.btncargar.TabIndex = 24
-        Me.btncargar.TabStop = False
         '
         'cbeliminar
         '
@@ -186,15 +166,6 @@ Partial Class fmproducto
         Me.CheckBox1.TabIndex = 26
         Me.CheckBox1.Text = "Fecha de vencimiento:"
         Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'imagen
-        '
-        Me.imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.imagen.Location = New System.Drawing.Point(147, 281)
-        Me.imagen.Name = "imagen"
-        Me.imagen.Size = New System.Drawing.Size(183, 154)
-        Me.imagen.TabIndex = 23
-        Me.imagen.TabStop = False
         '
         'Label7
         '
@@ -301,16 +272,6 @@ Partial Class fmproducto
         Me.txtdescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtdescripcion.Size = New System.Drawing.Size(269, 54)
         Me.txtdescripcion.TabIndex = 5
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(66, 70)
-        Me.PictureBox2.TabIndex = 32
-        Me.PictureBox2.TabStop = False
         '
         'btneditar
         '
@@ -509,9 +470,50 @@ Partial Class fmproducto
         Me.Label8.TabIndex = 28
         Me.Label8.Text = "Codigo de Barra:"
         '
+        'btnlimpiar
+        '
+        Me.btnlimpiar.BackgroundImage = CType(resources.GetObject("btnlimpiar.BackgroundImage"), System.Drawing.Image)
+        Me.btnlimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnlimpiar.Location = New System.Drawing.Point(336, 373)
+        Me.btnlimpiar.Name = "btnlimpiar"
+        Me.btnlimpiar.Size = New System.Drawing.Size(79, 62)
+        Me.btnlimpiar.TabIndex = 25
+        Me.btnlimpiar.TabStop = False
+        '
+        'btncargar
+        '
+        Me.btncargar.BackgroundImage = CType(resources.GetObject("btncargar.BackgroundImage"), System.Drawing.Image)
+        Me.btncargar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btncargar.Location = New System.Drawing.Point(336, 281)
+        Me.btncargar.Name = "btncargar"
+        Me.btncargar.Size = New System.Drawing.Size(79, 70)
+        Me.btncargar.TabIndex = 24
+        Me.btncargar.TabStop = False
+        '
+        'imagen
+        '
+        Me.imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.imagen.Location = New System.Drawing.Point(147, 281)
+        Me.imagen.Name = "imagen"
+        Me.imagen.Size = New System.Drawing.Size(183, 154)
+        Me.imagen.TabIndex = 23
+        Me.imagen.TabStop = False
+        '
         'dlg
         '
         Me.dlg.FileName = "OpenFileDialog1"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(2, 2)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(66, 70)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 32
+        Me.PictureBox2.TabStop = False
         '
         'fmproducto
         '
@@ -528,16 +530,16 @@ Partial Class fmproducto
         Me.Name = "fmproducto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = ".:. Listado de productos .:."
-        CType(Me.btnlimpiar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btncargar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.datalistado, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imagen, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.erroricono, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.mantenimiento.ResumeLayout(False)
         Me.mantenimiento.PerformLayout()
+        CType(Me.btnlimpiar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btncargar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imagen, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

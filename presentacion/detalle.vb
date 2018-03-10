@@ -14,11 +14,10 @@ Public Class detalle
     Dim Fechfin As String
 
     Public Sub detalle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
         filtrar_fecha()
         DataSet.Clear()
         dt.Clear()
-        
+       
     End Sub
     Private Sub filtrar_fecha()
         Dim con As New SqlConnection
@@ -36,11 +35,11 @@ Public Class detalle
             Dim comando As New SqlCommand
             Dim Adaptador As New SqlDataAdapter()
 
-
+         
             With comando
                 ' Asignar el sql para seleccionar los datos de la tabla Maestro  
 
-                .CommandText = "SELECT idventa,(SELECT dni FROM cliente where venta.idcliente=cliente.idcliente) as DNI,(SELECT nombres FROM cliente where venta.idcliente=cliente.idcliente) as Nombre, CAST( fecha AS DATE ) as fecha,tipo as Factura FROM venta where fecha BETWEEN '" & Fechini & "' AND '" & Fechfin & "'"
+                .CommandText = "SELECT idventa,(SELECT dni FROM cliente where venta.idcliente=cliente.idcliente) as DNI,(SELECT nombres FROM cliente where venta.idcliente=cliente.idcliente) as Nombre, CAST( fecha AS DATE ) as Fecha,tipo as Contribuyente FROM venta where fecha BETWEEN '" & Fechini & "' AND '" & Fechfin & "'"
                 .Connection = con
             End With
 
@@ -58,6 +57,7 @@ Public Class detalle
                 .DataSource = DataSet
 
                 .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
                 .DefaultCellStyle.BackColor = Color.AliceBlue
             End With
 
@@ -65,7 +65,7 @@ Public Class detalle
             '            ' DataGridView detalle  
             With comando
                 ' cadena sql para cargar la tabla pedidos  
-                .CommandText = "SELECT iddetalleventa,idventa,(SELECT nombre FROM producto where detalle.idproducto=producto.idproducto) AS Nombre_Producto,Cantidad,Precio_unitario as Precio_Unitario,Total FROM detalle"
+                .CommandText = "SELECT iddetalleventa,idventa,(SELECT nombre FROM producto where detalle.idproducto=producto.idproducto) AS 'Nombre Producto',Cantidad,Precio_unitario as 'Precio Unitario',Total FROM detalle"
                 .Connection = con
             End With
 
@@ -82,6 +82,7 @@ Public Class detalle
                 .DataSource = DataSet
 
                 .SelectionMode = DataGridViewSelectionMode.FullRowSelect
+
                 .DefaultCellStyle.BackColor = Color.AliceBlue
             End With
 
@@ -89,7 +90,7 @@ Public Class detalle
 
                 If Not .Relations.Contains("mi_Relacion") Then
                     .Relations.Add("mi_Relacion", .Tables("Maestro").Columns(campo_Relacionado), .Tables("Detalle").Columns(campo_Relacionado), False)
-
+                 
                 End If
             End With
 
@@ -100,7 +101,13 @@ Public Class detalle
                 .SelectionMode = DataGridViewSelectionMode.FullRowSelect
             End With
 
-           
+            DataGridView.Columns("Total").Width = 70
+            DataGridView.Columns("Nombre Producto").Width = 170
+            DataGridView.Columns("Precio Unitario").DefaultCellStyle.Format = "$ 0.00"
+            DataGridView.Columns("Total").DefaultCellStyle.Format = "$ 0.00"
+            DataGridView1.ClearSelection()
+            DataGridView.ClearSelection()
+            Label13.Text = "0"
             For Each row As DataGridViewRow In DataGridView1.Rows
                 ' Si es la fila de nuevos registros, continuamos
                 If (row.IsNewRow) Then Continue For
@@ -166,7 +173,7 @@ Public Class detalle
         DataGridView1.Columns("idventa").Visible = False
         DataGridView.Columns("idventa").Visible = False
         DataGridView.Columns("iddetalleventa").Visible = False
-     
+
     End Sub
 
 
@@ -176,7 +183,12 @@ Public Class detalle
         Me.Close()
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    Private Sub btnsalir_Click_1(sender As Object, e As EventArgs) Handles btnsalir.Click
+        Me.Close()
+    End Sub
+
+    Private Sub DataGridView1_SelectionChanged(sender As Object, e As EventArgs) Handles DataGridView1.SelectionChanged
         Dim rotal As Double = 0 'suma de subtotal
         Dim fila As DataGridViewRow = New DataGridViewRow() '
         For Each fila In DataGridView.Rows '
@@ -184,9 +196,4 @@ Public Class detalle
         Next '
         Label13.Text = Convert.ToString(rotal) '
     End Sub
-
-    Private Sub btnsalir_Click_1(sender As Object, e As EventArgs) Handles btnsalir.Click
-        Me.Close()
-    End Sub
-
 End Class

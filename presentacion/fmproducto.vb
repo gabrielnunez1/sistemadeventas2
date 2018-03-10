@@ -3,9 +3,14 @@
     Private dt As New DataTable
 
     Private Sub fmproducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         btnguardar2.Visible = False
         btneliminar.Visible = False
         mostrar()
+        datalistado.Columns("precio_venta").Width = 50
+        datalistado.Columns("precio_compra").Width = 50
+        datalistado.Columns("nombre_categoria").Width = 150
+        datalistado.Columns("nombre").Width = 150
         ocultar_columnas()
         txtfecha_vencimiento.Visible = False
         limpiar()

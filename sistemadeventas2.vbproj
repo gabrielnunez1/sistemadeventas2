@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>25</ApplicationRevision>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -76,6 +76,9 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>sales_bag_shopping_bargain_retail_icon-icons.com_55340.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -104,6 +107,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="clientecon.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -185,16 +189,16 @@
     <Compile Include="presentacion\fmproducto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="presentacion\usuario.Designer.vb">
-      <DependentUpon>usuario.vb</DependentUpon>
-    </Compile>
-    <Compile Include="presentacion\usuario.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="presentacion\venta.Designer.vb">
       <DependentUpon>venta.vb</DependentUpon>
     </Compile>
     <Compile Include="presentacion\venta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="presentacion\usuario.Designer.vb">
+      <DependentUpon>usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="presentacion\usuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="reporte\fmreportecomprobante.Designer.vb">
@@ -231,7 +235,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
-      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <Generator>PublicVbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
@@ -257,11 +261,11 @@
     <EmbeddedResource Include="presentacion\fmproducto.resx">
       <DependentUpon>fmproducto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="presentacion\usuario.resx">
-      <DependentUpon>usuario.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="presentacion\venta.resx">
       <DependentUpon>venta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="presentacion\usuario.resx">
+      <DependentUpon>usuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reporte\fmreportecomprobante.resx">
       <DependentUpon>fmreportecomprobante.vb</DependentUpon>
@@ -407,6 +411,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Add User1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\47486 - basket1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\47486 - basket2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\47490 - purse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\67719 - 6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\55826 - key private secure unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\47488 - accounting cash money office trade.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\49275 - in zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_External_Drive_Time_Machine_1215204.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\47486 - basket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\67719 - 61.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\67719 - 62.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="sales_bag_shopping_bargain_retail_icon-icons.com_55340.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
