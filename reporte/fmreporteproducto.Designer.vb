@@ -24,13 +24,23 @@ Partial Class fmreporteproducto
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.rptproducto = New sistemadeventas2.rptproducto()
         Me.mostrar_productoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.rptproducto = New sistemadeventas2.rptproducto()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.mostrar_productoTableAdapter = New sistemadeventas2.rptproductoTableAdapters.mostrar_productoTableAdapter()
-        CType(Me.rptproducto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mostrar_productoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.rptproducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'mostrar_productoBindingSource
+        '
+        Me.mostrar_productoBindingSource.DataMember = "mostrar_producto"
+        Me.mostrar_productoBindingSource.DataSource = Me.rptproducto
+        '
+        'rptproducto
+        '
+        Me.rptproducto.DataSetName = "rptproducto"
+        Me.rptproducto.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -44,16 +54,6 @@ Partial Class fmreporteproducto
         Me.ReportViewer1.Size = New System.Drawing.Size(824, 653)
         Me.ReportViewer1.TabIndex = 0
         '
-        'rptproducto
-        '
-        Me.rptproducto.DataSetName = "rptproducto"
-        Me.rptproducto.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'mostrar_productoBindingSource
-        '
-        Me.mostrar_productoBindingSource.DataMember = "mostrar_producto"
-        Me.mostrar_productoBindingSource.DataSource = Me.rptproducto
-        '
         'mostrar_productoTableAdapter
         '
         Me.mostrar_productoTableAdapter.ClearBeforeFill = True
@@ -65,9 +65,10 @@ Partial Class fmreporteproducto
         Me.ClientSize = New System.Drawing.Size(824, 653)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "fmreporteproducto"
-        Me.Text = "fmreporteproducto"
-        CType(Me.rptproducto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Reporte Productos"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.mostrar_productoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.rptproducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

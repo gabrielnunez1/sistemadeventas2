@@ -23,7 +23,7 @@ Partial Class fmreportecomprobante
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource4 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.reportecomprobanteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.rptcomprobante = New sistemadeventas2.rptcomprobante()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -46,9 +46,9 @@ Partial Class fmreportecomprobante
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource4.Name = "rptcomprobante"
-        ReportDataSource4.Value = Me.reportecomprobanteBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource4)
+        ReportDataSource1.Name = "rptcomprobante"
+        ReportDataSource1.Value = Me.reportecomprobanteBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "sistemadeventas2.rptcomprobante.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -75,7 +75,8 @@ Partial Class fmreportecomprobante
         Me.Controls.Add(Me.txtidventa)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "fmreportecomprobante"
-        Me.Text = "fmreportecomprobante"
+        Me.Text = "Comprobante"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.reportecomprobanteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rptcomprobante, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

@@ -52,6 +52,8 @@ Public Class venta
         Next
         Label13.Text = Convert.ToString(rotal) '
         Me.txtcod.Focus()
+        limpiar()
+
     End Sub
 
     Private Sub btncobrar_Click(sender As Object, e As EventArgs) Handles btncobrar.Click
@@ -74,10 +76,11 @@ Public Class venta
                 Dim a As Integer = Convert.ToInt16(cmd.ExecuteScalar) + 1
                 If consumidorfinal.CheckState = CheckState.Checked Then
                     Dim b As String = "Consumidor final"
-                    cmd.CommandText = "INSERT INTO venta (idventa,fecha,tipo) VALUES ('" & a & "','" & DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "") + " " + DateTime.Now.ToLongTimeString & "','" & b & "');"
-                Else
-                cmd.CommandText = "INSERT INTO venta (idventa,idcliente,fecha,tipo) VALUES ('" & a & "','" & Integer.Parse(txtidcliente.Text) & "','" & DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "") + " " + DateTime.Now.ToLongTimeString & "','" & tipos & "');"
-                    fmcomprobanteconcliente.txtidventa.Text = a
+                cmd.CommandText = "INSERT INTO venta (idventa,fecha,tipo) VALUES ('" & a & "','" & DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "") + " " + DateTime.Now.ToString("HH:mm:ss") & "','" & b & "');"
+
+            Else
+                cmd.CommandText = "INSERT INTO venta (idventa,idcliente,fecha,tipo) VALUES ('" & a & "','" & Integer.Parse(txtidcliente.Text) & "','" & DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "") + " " + DateTime.Now.ToString("HH:mm:ss") & "','" & tipos & "');"
+                fmcomprobanteconcliente.txtidventa.Text = a
                 End If
                 cmd.ExecuteNonQuery()
                 cargarDetalleVenta(a, cmd)
@@ -170,13 +173,17 @@ Public Class venta
         End If
     End Sub
 
+
     Private Sub venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         btncobrar.Enabled = False
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         If consumidorfinal.CheckState = CheckState.Unchecked Then
             foco()
+
         End If
+
         btneliminar.Visible = False
         TextBox3.Enabled = False
         btncobrar.Enabled = False
@@ -268,10 +275,9 @@ Public Class venta
     End Sub
 
     Private Sub txtcod_LostFocus(sender As Object, e As EventArgs) Handles txtcod.LostFocus
+    
         If Not txtcod.Text = "" Then
 
-
-            pasar()
             Dim clave As String = txtcod.Text
             Dim func As New fproducto
             dt = func.mostrar
@@ -290,8 +296,11 @@ Public Class venta
                         imagen.Image = Nothing
                     End If
                     Exit For
+
                 End If
             Next
+            Me.txtcantidad.Focus()
+            txtcantidad.Select(0, txtcantidad.Text.Length)
         End If
     End Sub
 
@@ -321,12 +330,21 @@ Public Class venta
                 Next
                 pasar()
             End If
+        Else
+            If Asc(e.KeyChar) = 13 Then
+                Me.btncobrar.Focus()
+            End If
+
         End If
     End Sub
 
     Public Sub pasar()
         If TextBox3.Text <> "" Then
             Me.txtcantidad.Focus()
+            txtcantidad.Select(0, txtcantidad.Text.Length)
+
         End If
     End Sub
+
+
 End Class

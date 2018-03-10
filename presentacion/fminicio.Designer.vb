@@ -80,7 +80,7 @@ Partial Class fminicio
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
         Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(64, 34)
-        Me.SalirToolStripMenuItem.Text = "Salir"
+        Me.SalirToolStripMenuItem.Text = "&Salir"
         '
         'StatusStrip
         '
@@ -115,20 +115,20 @@ Partial Class fminicio
         Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaVentaToolStripMenuItem, Me.RegistroDeVentasToolStripMenuItem})
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
         Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(87, 34)
-        Me.VentasToolStripMenuItem.Text = "Ventas"
+        Me.VentasToolStripMenuItem.Text = "&Ventas"
         '
         'NuevaVentaToolStripMenuItem
         '
         Me.NuevaVentaToolStripMenuItem.Name = "NuevaVentaToolStripMenuItem"
         Me.NuevaVentaToolStripMenuItem.Size = New System.Drawing.Size(219, 34)
-        Me.NuevaVentaToolStripMenuItem.Text = "Nueva Venta"
+        Me.NuevaVentaToolStripMenuItem.Text = "&Nueva Venta"
         '
         'RegistroDeVentasToolStripMenuItem
         '
         Me.RegistroDeVentasToolStripMenuItem.Image = Global.sistemadeventas2.My.Resources.Resources.paper
         Me.RegistroDeVentasToolStripMenuItem.Name = "RegistroDeVentasToolStripMenuItem"
         Me.RegistroDeVentasToolStripMenuItem.Size = New System.Drawing.Size(219, 34)
-        Me.RegistroDeVentasToolStripMenuItem.Text = "Detalle Ventas"
+        Me.RegistroDeVentasToolStripMenuItem.Text = "&Detalle Ventas"
         '
         'IngresosToolStripMenuItem
         '
@@ -136,7 +136,7 @@ Partial Class fminicio
         Me.IngresosToolStripMenuItem.Image = Global.sistemadeventas2.My.Resources.Resources.books
         Me.IngresosToolStripMenuItem.Name = "IngresosToolStripMenuItem"
         Me.IngresosToolStripMenuItem.Size = New System.Drawing.Size(119, 34)
-        Me.IngresosToolStripMenuItem.Text = "Ingresos"
+        Me.IngresosToolStripMenuItem.Text = "&Ingresos"
         '
         'CategoriasToolStripMenuItem
         '
@@ -161,7 +161,7 @@ Partial Class fminicio
         Me.ReportesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesDeProductosToolStripMenuItem})
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(106, 34)
-        Me.ReportesToolStripMenuItem.Text = "Reportes"
+        Me.ReportesToolStripMenuItem.Text = "&Reportes"
         '
         'ReportesDeProductosToolStripMenuItem
         '

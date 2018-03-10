@@ -68,6 +68,7 @@ Partial Class venta
         Me.inexistente = New System.Windows.Forms.LinkLabel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.txtcantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,6 +77,7 @@ Partial Class venta
         CType(Me.imagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txtnombre_cliente
@@ -274,11 +276,10 @@ Partial Class venta
         '
         Me.lblhora.AutoSize = True
         Me.lblhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblhora.Location = New System.Drawing.Point(491, 3)
+        Me.lblhora.Location = New System.Drawing.Point(0, 6)
         Me.lblhora.Name = "lblhora"
-        Me.lblhora.Size = New System.Drawing.Size(19, 25)
+        Me.lblhora.Size = New System.Drawing.Size(0, 25)
         Me.lblhora.TabIndex = 47
-        Me.lblhora.Text = "."
         '
         'Label14
         '
@@ -550,12 +551,21 @@ Partial Class venta
         Me.PictureBox2.TabIndex = 50
         Me.PictureBox2.TabStop = False
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.PaleTurquoise
+        Me.Panel1.Controls.Add(Me.lblhora)
+        Me.Panel1.Location = New System.Drawing.Point(500, 41)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(226, 36)
+        Me.Panel1.TabIndex = 51
+        '
         'venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(735, 578)
-        Me.Controls.Add(Me.lblhora)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.GroupBox2)
@@ -575,6 +585,8 @@ Partial Class venta
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -624,4 +636,5 @@ Partial Class venta
     Friend WithEvents consumidorfinal As System.Windows.Forms.CheckBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txtcod As System.Windows.Forms.TextBox
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

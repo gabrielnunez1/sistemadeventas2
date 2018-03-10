@@ -22,6 +22,8 @@
             Else
                 MsgBox("Sus datos son incorrectos, ingrese nuevamente sus datos", MsgBoxStyle.Exclamation, "Acceso denegado al sistema")
                 txtpassword.Clear()
+                txtpassword.Focus()
+
 
             End If
         Catch ex As Exception
@@ -30,7 +32,25 @@
         End Try
     End Sub
 
+    
+    Private Sub txtpassword_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtpassword.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If txtpassword.Text <> "" And txtlogin.Text <> "" Then
+                Me.btningresar.Focus()
+            End If
+        End If
+    End Sub
 
+
+    Private Sub txtlogin_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtlogin.KeyPress
+        If Asc(e.KeyChar) = 13 Then
+            If txtlogin.Text <> "" Then
+                Me.txtpassword.Focus()
+            End If
+        End If
+    End Sub
 
 
 End Class
+
+

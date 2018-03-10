@@ -39,9 +39,6 @@ Partial Class detalle
         Me.inexistente = New System.Windows.Forms.LinkLabel()
         Me.btnnuevaventa = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.datalistado.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -110,6 +107,7 @@ Partial Class detalle
         '
         'bus
         '
+        Me.bus.Checked = False
         Me.bus.Location = New System.Drawing.Point(6, 18)
         Me.bus.MinDate = New Date(2017, 1, 1, 0, 0, 0, 0)
         Me.bus.Name = "bus"
@@ -245,41 +243,11 @@ Partial Class detalle
         Me.PictureBox2.TabIndex = 36
         Me.PictureBox2.TabStop = False
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(320, 32)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 37
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(122, 63)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 38
-        Me.Label1.Text = "Label1"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(327, 60)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 39
-        Me.Label2.Text = "Label2"
-        '
         'detalle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(467, 561)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.datalistado)
         Me.Controls.Add(Me.PictureBox2)
@@ -317,7 +285,4 @@ Partial Class detalle
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents bus As System.Windows.Forms.DateTimePicker
     Friend WithEvents bus2 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

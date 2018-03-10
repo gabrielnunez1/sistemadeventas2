@@ -84,12 +84,13 @@ Public Class fminicio
     Private Sub ProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem.Click
         fmproducto.MdiParent = Me
         fmproducto.Show()
+        fmproducto.txtcod.Focus()
     End Sub
 
     Private Sub RegistroDeVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroDeVentasToolStripMenuItem.Click
         detalle.MdiParent = Me
         detalle.Show()
-
+        detalle.bus.Focus()
     End Sub
 
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs)
@@ -103,6 +104,7 @@ Public Class fminicio
     Private Sub GenerarBackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerarBackupToolStripMenuItem.Click
         fmbackupbase.MdiParent = Me
         fmbackupbase.Show()
+        fmbackupbase.btnbackup.Select()
 
     End Sub
     Private Sub IndexToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IndexToolStripMenuItem.Click
@@ -115,6 +117,8 @@ Public Class fminicio
     Private Sub NuevaVentaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaVentaToolStripMenuItem.Click
         venta.MdiParent = Me
         venta.Show()
+        venta.txtcod.Focus()
+
     End Sub
 
     Private Sub ClientesToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem1.Click
@@ -131,5 +135,10 @@ Public Class fminicio
     Private Sub UsuarioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsuarioToolStripMenuItem.Click
         usuario.MdiParent = Me
         usuario.Show()
+        usuario.txtidusuario.Focus()
+    End Sub
+
+    Private Sub fminicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

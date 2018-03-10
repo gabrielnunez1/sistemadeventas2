@@ -283,7 +283,7 @@ Partial Class fmcliente
         Me.GroupBox2.Controls.Add(Me.btneditar)
         Me.GroupBox2.Location = New System.Drawing.Point(298, 72)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(567, 402)
+        Me.GroupBox2.Size = New System.Drawing.Size(634, 402)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Listado de Cliente"
@@ -302,7 +302,7 @@ Partial Class fmcliente
         '
         Me.txtbuscar.Location = New System.Drawing.Point(133, 28)
         Me.txtbuscar.Name = "txtbuscar"
-        Me.txtbuscar.Size = New System.Drawing.Size(426, 20)
+        Me.txtbuscar.Size = New System.Drawing.Size(492, 20)
         Me.txtbuscar.TabIndex = 1
         '
         'cbocampo
@@ -325,7 +325,7 @@ Partial Class fmcliente
         Me.datalistado.ReadOnly = True
         Me.datalistado.RowHeadersVisible = False
         Me.datalistado.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.datalistado.Size = New System.Drawing.Size(553, 279)
+        Me.datalistado.Size = New System.Drawing.Size(622, 279)
         Me.datalistado.TabIndex = 2
         '
         'Eliminar
@@ -370,7 +370,7 @@ Partial Class fmcliente
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(869, 478)
+        Me.ClientSize = New System.Drawing.Size(935, 478)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)

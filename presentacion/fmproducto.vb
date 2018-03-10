@@ -82,7 +82,7 @@
     Private Sub ocultar_columnas()
         datalistado.Columns(1).Visible = False
         datalistado.Columns(2).Visible = False
-        'datalistado.Columns(10).Visible = False
+        datalistado.Columns(10).Visible = False
 
 
     End Sub
